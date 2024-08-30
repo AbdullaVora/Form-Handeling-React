@@ -6,7 +6,6 @@ const Form = () => {
   const [data, setData] = useState([]);
   const [input, setInput] = useState({});
   const [editIndex, setEditIndex] = useState();
-  const [checkEdit, setCheckEdit] = useState(-1);
 
   const handleInput = (e) => {
     let { name, value } = e.target;
@@ -23,7 +22,7 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if(checkEdit != -1){
+    if(editIndex === undefined){
       setData((Data) => {
         const newData = [...Data, input];
         localStorage.setItem('Data', JSON.stringify(newData));
@@ -35,6 +34,7 @@ const Form = () => {
       localStorage.setItem('Data', JSON.stringify(newData));
       window.location.reload();
     }
+    setInput({});
   };
 
   const handleDelete = (index) => {
