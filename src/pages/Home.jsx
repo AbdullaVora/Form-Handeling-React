@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import Form from '../../components/Form'
-import Table from '../../components/Table'
+import Form from '../components/Form'
+import Table from '../components/Table'
 
 const Home = () => {
 
